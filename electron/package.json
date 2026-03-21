@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "WhatsApp Web multi-sessão",
   "homepage": "https://github.com/albreis/whatsnux",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/albreis/whatsnux.git"
+  },
   "main": "main.js",
   "scripts": {
     "start": "electron .",
