@@ -1,4 +1,4 @@
-app-id: com.whatsnux.app
+app-id: br.com.ersolucoesweb.Whatsnux
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
@@ -24,23 +24,23 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm755 whatsnux.sh /app/bin/whatsnux
-      - install -Dm644 com.whatsnux.app.desktop /app/share/applications/com.whatsnux.app.desktop
-      - install -Dm644 com.whatsnux.app.metainfo.xml /app/share/metainfo/com.whatsnux.app.metainfo.xml
+      - install -Dm644 br.com.ersolucoesweb.Whatsnux.desktop /app/share/applications/br.com.ersolucoesweb.Whatsnux.desktop
+      - install -Dm644 br.com.ersolucoesweb.Whatsnux.metainfo.xml /app/share/metainfo/br.com.ersolucoesweb.Whatsnux.metainfo.xml
       - |
         for size in 48 128 256 512; do
-          install -Dm644 icons/icon-${size}.png /app/share/icons/hicolor/${size}x${size}/apps/com.whatsnux.app.png
+          install -Dm644 icons/icon-${size}.png /app/share/icons/hicolor/${size}x${size}/apps/br.com.ersolucoesweb.Whatsnux.png
         done
       - cp -r app /app/lib/whatsnux
     sources:
       - type: archive
-        url: https://github.com/whatsnux/whatsnux/releases/latest/download/whatsnux-linux-x64.tar.gz
+        url: https://github.com/albreis/whatsnux/releases/latest/download/whatsnux-linux-x64.tar.gz
         sha256: PLACEHOLDER
         dest: app
         # Updated at release time by the Flathub PR bot or manually
       - type: file
-        path: com.whatsnux.app.desktop
+        path: br.com.ersolucoesweb.Whatsnux.desktop
       - type: file
-        path: com.whatsnux.app.metainfo.xml
+        path: br.com.ersolucoesweb.Whatsnux.metainfo.xml
       - type: file
         path: whatsnux.sh
       - type: dir

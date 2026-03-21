@@ -20,7 +20,7 @@ jobs:
       - name: Build Flatpak
         uses: flatpak/flatpak-github-actions/flatpak-builder@v6
         with:
-          manifest-path: flatpak/com.whatsnux.app.yml
+          manifest-path: flatpak/br.com.ersolucoesweb.Whatsnux.yml
           bundle: whatsnux.flatpak
           cache-key: flatpak-builder-${{ github.sha }}
 

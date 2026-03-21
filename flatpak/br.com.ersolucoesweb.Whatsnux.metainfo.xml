@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>com.whatsnux.app</id>
+  <id>br.com.ersolucoesweb.Whatsnux</id>
   <name>Whatsnux</name>
   <summary>WhatsApp Web multi-session client</summary>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT</project_license>
-  <developer id="com.whatsnux">
-    <name>Whatsnux</name>
+  <developer id="br.com.ersolucoesweb">
+    <name>ER Soluções Web</name>
   </developer>
 
   <description>
@@ -26,11 +26,11 @@
     </ul>
   </description>
 
-  <launchable type="desktop-id">com.whatsnux.app.desktop</launchable>
+  <launchable type="desktop-id">br.com.ersolucoesweb.Whatsnux.desktop</launchable>
 
-  <url type="homepage">https://github.com/whatsnux/whatsnux</url>
-  <url type="bugtracker">https://github.com/whatsnux/whatsnux/issues</url>
-  <url type="vcs-browser">https://github.com/whatsnux/whatsnux</url>
+  <url type="homepage">https://ersolucoesweb.com.br</url>
+  <url type="bugtracker">https://github.com/albreis/whatsnux/issues</url>
+  <url type="vcs-browser">https://github.com/albreis/whatsnux</url>
 
   <content_rating type="oars-1.1">
     <content_attribute id="social-chat">intense</content_attribute>
@@ -45,7 +45,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>Multiple WhatsApp sessions in tabs</caption>
-      <image>https://raw.githubusercontent.com/whatsnux/whatsnux/main/screenshots/main.png</image>
+      <image>https://raw.githubusercontent.com/albreis/whatsnux/main/screenshots/main.png</image>
     </screenshot>
   </screenshots>
 

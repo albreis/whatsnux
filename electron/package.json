@@ -2,7 +2,7 @@
   "name": "whatsnux",
   "version": "1.0.0",
   "description": "WhatsApp Web multi-sessão",
-  "homepage": "https://github.com/whatsnux/whatsnux",
+  "homepage": "https://github.com/albreis/whatsnux",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -15,8 +15,8 @@
     "build:snap": "electron-builder --linux snap"
   },
   "author": {
-    "name": "Whatsnux",
-    "email": "whatsnux@users.noreply.github.com"
+    "name": "ER Soluções Web",
+    "email": "contato@ersolucoesweb.com.br"
   },
   "license": "MIT",
   "devDependencies": {
@@ -24,7 +24,7 @@
     "electron-builder": "^25.0.0"
   },
   "build": {
-    "appId": "com.whatsnux.app",
+    "appId": "br.com.ersolucoesweb.Whatsnux",
     "productName": "Whatsnux",
     "directories": {
       "output": "dist"

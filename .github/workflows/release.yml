@@ -33,9 +33,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y rpm
 
       - name: Install Snapcraft
-        uses: samber/actions-snapcraft@v2
-        with:
-          skip_install: false
+        run: sudo snap install snapcraft --classic
 
       - name: Build Linux packages
         run: npx electron-builder --linux AppImage deb rpm snap --publish never
@@ -133,9 +131,7 @@ jobs:
           path: artifacts
 
       - name: Install Snapcraft
-        uses: samber/actions-snapcraft@v2
-        with:
-          skip_install: false
+        run: sudo snap install snapcraft --classic
 
       - name: Publish to Snap Store
         run: |
