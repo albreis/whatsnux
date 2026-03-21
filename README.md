@@ -1,7 +1,11 @@
 # Whatsnux
 
-[![Release](https://img.shields.io/github/v/release/whatsnux/whatsnux?style=flat-square)](https://github.com/whatsnux/whatsnux/releases/latest)
-[![License](https://img.shields.io/github/license/whatsnux/whatsnux?style=flat-square)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/albreis/whatsnux?style=flat-square)](https://github.com/albreis/whatsnux/releases/latest)
+[![License](https://img.shields.io/github/license/albreis/whatsnux?style=flat-square)](LICENSE)
+
+<a href="https://snapcraft.io/whatsnux">
+  <img alt="Disponível na Snap Store" src="https://snapcraft.io/pt/dark/install.svg" />
+</a>
 
 Wrapper desktop para o [WhatsApp Web](https://web.whatsapp.com/) com suporte a **múltiplas sessões simultâneas**.  
 Cada sessão é isolada (cookies/dados separados), permitindo múltiplas contas ao mesmo tempo.
@@ -48,31 +52,7 @@ Os artefatos ficam em `electron/dist/`.
 
 ---
 
-## Versão Qt (C++)
-
-### Requisitos (Ubuntu/Debian)
-
-```bash
-# Qt 5
-sudo apt install qtwebengine5-dev cmake build-essential
-
-# Qt 6
-sudo apt install qt6-webengine-dev cmake build-essential
-```
-
-### Compilar e executar
-
-```bash
-cd qt
-mkdir -p build && cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-cmake --build . -j$(nproc)
-./whatsnux
-```
-
----
-
-## Funcionalidades (ambas versões)
+## Funcionalidades
 
 - **Múltiplas sessões** em abas separadas
 - **Login persistente** entre reinicializações
@@ -90,9 +70,3 @@ cmake --build . -j$(nproc)
 | `Ctrl+1..9` | Ir para aba N |
 | `F5` / `Ctrl+R` | Recarregar |
 | Duplo clique na aba | Renomear |
-Comment=WhatsApp Web multi-sessão
-Exec=whatsnux
-Icon=internet-chat
-Categories=Network;InstantMessaging;
-StartupWMClass=whatsnux
-```
