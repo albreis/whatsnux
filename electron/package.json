@@ -42,27 +42,27 @@
       "synopsis": "WhatsApp Web multi-session client",
       "desktop": {
         "StartupWMClass": "whatsnux"
-      },
-      "snap": {
-        "confinement": "strict",
-        "grade": "stable",
-        "plugs": [
-          "default",
-          "browser-support",
-          "network",
-          "network-bind",
-          "camera",
-          "audio-playback",
-          "audio-record",
-          "desktop",
-          "desktop-legacy",
-          "home",
-          "x11",
-          "wayland",
-          "unity7",
-          "removable-media"
-        ]
       }
+    },
+    "snap": {
+      "confinement": "strict",
+      "grade": "stable",
+      "plugs": [
+        "default",
+        "browser-support",
+        "network",
+        "network-bind",
+        "camera",
+        "audio-playback",
+        "audio-record",
+        "desktop",
+        "desktop-legacy",
+        "home",
+        "x11",
+        "wayland",
+        "unity7",
+        "removable-media"
+      ]
     },
     "win": {
       "target": [
