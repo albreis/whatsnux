@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whatsnux</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="tab-bar">
+    <div id="tabs-container"></div>
+    <button id="btn-add-tab" title="Nova sessão (Ctrl+T)">+</button>
+  </div>
+
+  <!-- Modal genérico -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div id="modal-title" class="modal-title"></div>
+      <input id="modal-input" class="modal-input" type="text" spellcheck="false" />
+      <div class="modal-buttons">
+        <button id="modal-cancel" class="modal-btn modal-btn-cancel">Cancelar</button>
+        <button id="modal-ok" class="modal-btn modal-btn-ok">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

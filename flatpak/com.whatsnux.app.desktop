@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Whatsnux
+Comment=WhatsApp Web multi-session client
+GenericName=Messaging
+Exec=whatsnux %U
+Icon=com.whatsnux.app
+Type=Application
+Terminal=false
+Categories=Network;InstantMessaging;Chat;
+Keywords=whatsapp;chat;messaging;
+StartupWMClass=whatsnux
+MimeType=x-scheme-handler/whatsnux;

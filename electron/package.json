@@ -1,0 +1,71 @@
+{
+  "name": "whatsnux",
+  "version": "1.0.0",
+  "description": "WhatsApp Web multi-sessão",
+  "homepage": "https://github.com/whatsnux/whatsnux",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --linux --win",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --win",
+    "build:deb": "electron-builder --linux deb",
+    "build:rpm": "electron-builder --linux rpm",
+    "build:appimage": "electron-builder --linux AppImage",
+    "build:snap": "electron-builder --linux snap"
+  },
+  "author": {
+    "name": "Whatsnux",
+    "email": "whatsnux@users.noreply.github.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.whatsnux.app",
+    "productName": "Whatsnux",
+    "directories": {
+      "output": "dist"
+    },
+    "linux": {
+      "target": ["AppImage", "deb", "rpm", "snap"],
+      "category": "Network;InstantMessaging;",
+      "icon": "icons",
+      "executableName": "whatsnux",
+      "synopsis": "WhatsApp Web multi-session client",
+      "desktop": {
+        "StartupWMClass": "whatsnux"
+      },
+      "snap": {
+        "confinement": "strict",
+        "grade": "stable",
+        "plugs": [
+          "default",
+          "browser-support",
+          "network",
+          "network-bind",
+          "camera",
+          "audio-playback",
+          "audio-record",
+          "desktop",
+          "desktop-legacy",
+          "home",
+          "x11",
+          "wayland",
+          "unity7",
+          "removable-media"
+        ]
+      }
+    },
+    "win": {
+      "target": ["nsis", "portable"],
+      "icon": "icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

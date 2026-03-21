@@ -1,0 +1,47 @@
+app-id: com.whatsnux.app
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '24.08'
+command: whatsnux
+separate-locales: false
+
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=x11
+  - --socket=wayland
+  - --socket=pulseaudio
+  - --device=all              # webcam
+  - --filesystem=xdg-download # downloads
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=com.canonical.AppMenu.Registrar
+
+modules:
+  - name: whatsnux
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 whatsnux.sh /app/bin/whatsnux
+      - install -Dm644 com.whatsnux.app.desktop /app/share/applications/com.whatsnux.app.desktop
+      - install -Dm644 com.whatsnux.app.metainfo.xml /app/share/metainfo/com.whatsnux.app.metainfo.xml
+      - |
+        for size in 48 128 256 512; do
+          install -Dm644 icons/icon-${size}.png /app/share/icons/hicolor/${size}x${size}/apps/com.whatsnux.app.png
+        done
+      - cp -r app /app/lib/whatsnux
+    sources:
+      - type: archive
+        url: https://github.com/whatsnux/whatsnux/releases/latest/download/whatsnux-linux-x64.tar.gz
+        sha256: PLACEHOLDER
+        dest: app
+        # Updated at release time by the Flathub PR bot or manually
+      - type: file
+        path: com.whatsnux.app.desktop
+      - type: file
+        path: com.whatsnux.app.metainfo.xml
+      - type: file
+        path: whatsnux.sh
+      - type: dir
+        path: icons

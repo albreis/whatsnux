@@ -1,0 +1,51 @@
+name: whatsnux
+version: '1.0.0'
+summary: WhatsApp Web multi-session client
+description: |
+  Whatsnux wraps WhatsApp Web in a desktop app with support for
+  multiple simultaneous sessions. Each session runs in its own
+  isolated tab with persistent cookies and storage.
+
+grade: stable
+confinement: strict
+base: core22
+compression: lzo
+
+architectures:
+  - build-on: amd64
+
+apps:
+  whatsnux:
+    command: whatsnux/whatsnux --no-sandbox
+    extensions: [gnome]
+    plugs:
+      - browser-support
+      - network
+      - network-bind
+      - camera
+      - audio-playback
+      - audio-record
+      - home
+      - removable-media
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
+      DISABLE_WAYLAND: 1
+
+parts:
+  whatsnux:
+    plugin: nil
+    source: electron
+    build-packages:
+      - nodejs
+      - npm
+    override-build: |
+      npm ci
+      npx electron-builder --linux dir --publish never
+      cp -r dist/linux-unpacked $SNAPCRAFT_PART_INSTALL/whatsnux
+    stage-packages:
+      - libnotify4
+      - libsecret-1-0
+      - libgtk-3-0
+      - libnss3
+      - libxss1
+      - libasound2

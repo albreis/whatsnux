@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.whatsnux.app</id>
+  <name>Whatsnux</name>
+  <summary>WhatsApp Web multi-session client</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <developer id="com.whatsnux">
+    <name>Whatsnux</name>
+  </developer>
+
+  <description>
+    <p>
+      Whatsnux is a desktop client that wraps WhatsApp Web, allowing you to
+      manage multiple WhatsApp sessions simultaneously in separate tabs.
+      Each session has its own isolated storage, so you can stay logged in
+      to different accounts at the same time.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>Multiple simultaneous WhatsApp sessions</li>
+      <li>Persistent sessions — no re-login needed</li>
+      <li>Dark theme matching WhatsApp</li>
+      <li>System tray with notification badges</li>
+      <li>Keyboard shortcuts (Ctrl+T, Ctrl+W, Ctrl+1-9)</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">com.whatsnux.app.desktop</launchable>
+
+  <url type="homepage">https://github.com/whatsnux/whatsnux</url>
+  <url type="bugtracker">https://github.com/whatsnux/whatsnux/issues</url>
+  <url type="vcs-browser">https://github.com/whatsnux/whatsnux</url>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+  </content_rating>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#25d366</color>
+    <color type="primary" scheme_preference="dark">#111b21</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>Multiple WhatsApp sessions in tabs</caption>
+      <image>https://raw.githubusercontent.com/whatsnux/whatsnux/main/screenshots/main.png</image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.0" date="2026-03-21">
+      <description>
+        <p>Initial release with multi-session support.</p>
+      </description>
+    </release>
+  </releases>
+
+  <requires>
+    <display_length compare="ge">768</display_length>
+    <internet>always</internet>
+  </requires>
+</component>
