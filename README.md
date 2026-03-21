@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="electron/icons/snap-banner.png" alt="Whatsnux Banner" />
+</p>
+
 # Whatsnux
 
 [![Release](https://img.shields.io/github/v/release/albreis/whatsnux?style=flat-square)](https://github.com/albreis/whatsnux/releases/latest)
