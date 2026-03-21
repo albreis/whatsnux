@@ -30,7 +30,12 @@
       "output": "dist"
     },
     "linux": {
-      "target": ["AppImage", "deb", "rpm", "snap"],
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm",
+        "snap"
+      ],
       "category": "Network;InstantMessaging;",
       "icon": "icons",
       "executableName": "whatsnux",
@@ -60,7 +65,10 @@
       }
     },
     "win": {
-      "target": ["nsis", "portable"],
+      "target": [
+        "nsis",
+        "portable"
+      ],
       "icon": "icons/icon.ico"
     },
     "nsis": {
