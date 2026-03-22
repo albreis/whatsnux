@@ -19,7 +19,7 @@
     "build:snap": "electron-builder --linux snap",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "node --test 'test/**/*.test.js'"
+    "test": "node --test test/"
   },
   "author": {
     "name": "ER Soluções Web",
