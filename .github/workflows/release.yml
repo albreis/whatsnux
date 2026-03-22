@@ -145,3 +145,43 @@ jobs:
           snapcraft upload "$SNAP_FILE" --release=stable
         env:
           SNAPCRAFT_STORE_CREDENTIALS: ${{ secrets.SNAPCRAFT_STORE_CREDENTIALS }}
+
+  # ─────────────────────────────────────────────────────────────────────────
+  # Build & Publish Flatpak
+  # ─────────────────────────────────────────────────────────────────────────
+  publish-flatpak:
+    needs: publish-release
+    runs-on: ubuntu-latest
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:freedesktop-24.08
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download Linux artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: linux-packages
+          path: artifacts
+
+      - name: Update Flatpak manifest with real sha256
+        run: |
+          TAR_FILE=$(find artifacts -name 'whatsnux-linux-x64.tar.gz' | head -1)
+          SHA256=$(sha256sum "$TAR_FILE" | awk '{print $1}')
+          TAG_NAME="${GITHUB_REF_NAME}"
+          sed -i "s|url:.*whatsnux-linux-x64.tar.gz|url: https://github.com/albreis/whatsnux/releases/download/${TAG_NAME}/whatsnux-linux-x64.tar.gz|" flatpak/br.com.ersolucoesweb.Whatsnux.yml
+          sed -i "s|sha256:.*|sha256: ${SHA256}|" flatpak/br.com.ersolucoesweb.Whatsnux.yml
+
+      - name: Build Flatpak
+        uses: flatpak/flatpak-github-actions/flatpak-builder@v6
+        with:
+          manifest-path: flatpak/br.com.ersolucoesweb.Whatsnux.yml
+          bundle: whatsnux.flatpak
+          cache-key: flatpak-builder-${{ github.sha }}
+
+      - name: Upload Flatpak to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: whatsnux.flatpak
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
