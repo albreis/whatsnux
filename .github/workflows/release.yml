@@ -40,6 +40,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create tar.gz for Flatpak
+        run: |
+          cd dist/linux-unpacked
+          tar -czf ../whatsnux-linux-x64.tar.gz .
+
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -49,6 +54,7 @@ jobs:
             electron/dist/*.deb
             electron/dist/*.rpm
             electron/dist/*.snap
+            electron/dist/whatsnux-linux-x64.tar.gz
           retention-days: 5
 
   # ─────────────────────────────────────────────────────────────────────────
