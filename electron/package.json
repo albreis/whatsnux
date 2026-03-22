@@ -16,7 +16,10 @@
     "build:deb": "electron-builder --linux deb",
     "build:rpm": "electron-builder --linux rpm",
     "build:appimage": "electron-builder --linux AppImage",
-    "build:snap": "electron-builder --linux snap"
+    "build:snap": "electron-builder --linux snap",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "node --test 'test/**/*.test.js'"
   },
   "author": {
     "name": "ER Soluções Web",
@@ -25,7 +28,10 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^33.0.0",
-    "electron-builder": "^25.0.0"
+    "electron-builder": "^25.0.0",
+    "eslint": "^9.0.0",
+    "@eslint/js": "^9.0.0",
+    "globals": "^15.0.0"
   },
   "build": {
     "appId": "br.com.ersolucoesweb.Whatsnux",

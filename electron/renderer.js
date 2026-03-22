@@ -17,10 +17,11 @@ let activeSessionId = null;
 
 // ─── Modal helpers ───────────────────────────────────────────────────────────
 
-function showModal(title, defaultValue, { showInput = true, okText = 'OK', cancelText = 'Cancelar' } = {}) {
-  return new Promise(async (resolve) => {
-    // Esconde a BrowserView para que o modal fique acessível
-    await window.api.hideActiveView();
+async function showModal(title, defaultValue, { showInput = true, okText = 'OK', cancelText = 'Cancelar' } = {}) {
+  // Esconde a BrowserView para que o modal fique acessível
+  await window.api.hideActiveView();
+
+  return new Promise((resolve) => {
 
     modalTitle.textContent = title;
     modalInput.value = defaultValue || '';
@@ -77,7 +78,7 @@ function generateId() {
   return 'session_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 6);
 }
 
-function sanitize(text) {
+function _sanitize(text) {
   const el = document.createElement('span');
   el.textContent = text;
   return el.innerHTML;
