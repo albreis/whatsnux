@@ -45,3 +45,4 @@ modules:
         path: whatsnux.sh
       - type: dir
         path: icons
+        dest: icons
