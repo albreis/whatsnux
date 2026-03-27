@@ -43,6 +43,11 @@ parts:
       npx electron-builder --linux dir --publish never
       cp -r dist/linux-unpacked $SNAPCRAFT_PART_INSTALL/whatsnux
     stage-packages:
+      - fontconfig
+      - fonts-dejavu-core
+      - fonts-liberation
+      - fonts-noto-core
+      - fonts-noto-color-emoji
       - libnotify4
       - libsecret-1-0
       - libgtk-3-0

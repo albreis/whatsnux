@@ -15,6 +15,9 @@ finish-args:
   - --socket=pulseaudio
   - --device=all              # webcam
   - --filesystem=xdg-download # downloads
+  - --filesystem=xdg-data/fonts:ro
+  - --filesystem=~/.local/share/fonts:ro
+  - --filesystem=~/.fonts:ro
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
   - --talk-name=com.canonical.AppMenu.Registrar
@@ -45,3 +48,4 @@ modules:
         path: whatsnux.sh
       - type: dir
         path: icons
+        dest: icons
