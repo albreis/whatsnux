@@ -1,6 +1,6 @@
 {
   "name": "whatsnux",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "WhatsApp Web multi-sessão",
   "homepage": "https://github.com/albreis/whatsnux",
   "repository": {
@@ -57,13 +57,6 @@
     "snap": {
       "confinement": "strict",
       "grade": "stable",
-      "stagePackages": [
-        "fontconfig",
-        "fonts-dejavu-core",
-        "fonts-liberation",
-        "fonts-noto-core",
-        "fonts-noto-color-emoji"
-      ],
       "plugs": [
         "default",
         "camera",
