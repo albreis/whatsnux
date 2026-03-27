@@ -52,6 +52,8 @@ npm run build:snap      # Apenas .snap
 npm run build:win       # Windows (NSIS + portable)
 ```
 
+Obs.: `build` e `build:linux` não incluem Snap por padrão para facilitar build local (Snap depende de Multipass/snapcraft). Use `build:snap` quando quiser gerar o pacote `.snap`.
+
 Os artefatos ficam em `electron/dist/`.
 
 ---
