@@ -9,6 +9,16 @@ const WHATSAPP_URL = 'https://web.whatsapp.com/';
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
 
+// Snap environments can miss compatible Mesa drivers for Chromium GPU process.
+// Force a software fallback to avoid startup/rendering failures on file dialogs.
+if (process.platform === 'linux' && process.env.SNAP) {
+  app.disableHardwareAcceleration();
+  app.commandLine.appendSwitch('disable-gpu');
+  app.commandLine.appendSwitch('use-angle', 'swiftshader');
+  app.commandLine.appendSwitch('use-gl', 'swiftshader');
+  app.commandLine.appendSwitch('enable-unsafe-swiftshader');
+}
+
 const DATA_DIR = path.join(app.getPath('userData'), 'profiles');
 const SESSIONS_FILE = path.join(app.getPath('userData'), 'sessions.json');
 

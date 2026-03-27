@@ -1,6 +1,6 @@
 {
   "name": "whatsnux",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "WhatsApp Web multi-sessão",
   "homepage": "https://github.com/albreis/whatsnux",
   "repository": {
@@ -57,8 +57,13 @@
     "snap": {
       "confinement": "strict",
       "grade": "stable",
+      "environment": {
+        "LIBGL_ALWAYS_SOFTWARE": "1",
+        "ELECTRON_OZONE_PLATFORM_HINT": "x11"
+      },
       "plugs": [
         "default",
+        "opengl",
         "camera",
         "audio-record",
         "network-bind",
